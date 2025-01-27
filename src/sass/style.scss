@@ -1,0 +1,77 @@
+@use 'sass:meta';
+
+@font-face {
+	font-family: "SF Pro Display";
+	src: url("../fonts/SF-Pro-Display-Semibold.otf") format("otf");
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: "SF Pro Display";
+	src: url("../fonts/Inter-Medium.otf") format("otf");
+	font-weight: 500;
+}
+
+
+@font-face {
+	font-family: "Inter";
+	src: url("../fonts/Inter-SemiBold.otf") format("otf");
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("../fonts/Inter-Medium.otf") format("otf");
+	font-weight: 500;
+}
+
+
+@font-face {
+	font-family: "SF UI Display";
+	src: url("../fonts/sf-ui-display-bold.ttf") format("ttf");
+	font-weight: 700;
+}
+
+:root {
+	--oranzhevyy: #fd7e15;
+	--belyy: #fff;
+	--seryy: #262626;
+	--persikovyy: #ffd9b9;
+	--defolt: #dcdcdc;
+    --font-family: "SF Pro Display", sans-serif;
+    --second-family: "Inter", sans-serif;
+    --third-family: "SF UI Display", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+	max-width: 1450px;
+	width: 100%;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+.header__round {
+    border-radius: 100%;
+    padding: 13px;
+    width: 52px;
+    height: 52px;
+    background: var(--oranzhevyy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+        height: 27px;
+    }
+}
+
+@include meta.load-css("blocks/header");
+@include meta.load-css("blocks/main");
+
+// @include meta.load-css("blocks/файл");

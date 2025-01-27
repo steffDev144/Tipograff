@@ -1,0 +1,176 @@
+.main {
+    padding-bottom: 100px;
+    overflow-x: hidden;
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: 690px 1fr;
+        gap: 31px;
+    }
+
+    &__left {
+        padding-top: 166px;
+        h1 {
+            position: relative;
+            font-family: var(--font-family);
+            font-weight: 600;
+            max-width: 620px;
+            font-size: 96px;
+            line-height: 120%;
+            padding-left: 23px;
+            letter-spacing: 0.03em;
+            color: var(--seryy);
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 10px;
+                border-radius: 0 30px 30px 0;
+                width: calc(100% + 23px);
+                background: var(--persikovyy);
+                height: 107px;
+                z-index: -1;
+            }
+
+            &::after {
+                content: '';
+                top: 0;
+                left: 0;
+                position: absolute;
+                border-radius: 50px;
+                width: 3px;
+                height: 100%;
+                background: var(--oranzhevyy);
+            }
+        }
+    }
+
+    &__right {
+        position: relative;
+        display: flex;
+        align-items: end;
+        padding: 35px;
+
+        &_bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+            border-radius: 50px 0 0 50px;
+            z-index: -1;
+        }
+
+        &_wrap {
+            display: flex;
+            gap: 15px;
+            flex-direction: column;
+            button {
+                border-radius: 50px;
+                padding: 15px 45px;
+                width: max-content;
+                background: var(--oranzhevyy);
+                font-family: var(--font-family);
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 120%;
+                border: 2px solid var(--oranzhevyy);
+                letter-spacing: 0.03em;
+                color: var(--belyy);
+                cursor: pointer;
+                transition: all .3s ease-in-out;
+
+                &:active {
+                    background-color: transparent;
+                    color: var(--oranzhevyy);
+                }
+            }
+
+            label {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            input {
+                border-radius: 50px;
+                padding: 15px 45px;
+                max-width: 281px;
+                background: var(--belyy);
+                font-family: var(--font-family);
+                font-weight: 600;
+                font-size: 24px;
+                border: none;
+                line-height: 120%;
+                letter-spacing: 0.03em;
+                color: var(--seryy);
+            }
+        }
+    }
+
+    &__link {
+        border-radius: 50px;
+        padding: 15px 45px;
+        width: max-content;
+        display: flex;
+        align-items: center;
+        margin-top: 90px;
+        justify-content: center;
+        background: var(--oranzhevyy);
+        border: 1px solid var(--oranzhevyy);
+
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 120%;
+        letter-spacing: 0.03em;
+        text-decoration: none;
+        color: var(--belyy);
+
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            background-color: transparent;
+            color: var(--oranzhevyy);
+        }
+    }
+
+    &__list {
+        margin-top: 30px;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+
+        &_item {
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+                padding-bottom: 7px;
+                border-bottom: 1px solid #c3c3c3;
+
+                font-family: var(--font-family);
+                font-weight: 600;
+                font-size: 24px;
+                text-decoration: none;
+                transition: all .3s ease-in-out;
+                line-height: 120%;
+                letter-spacing: 0.03em;
+                color: var(--seryy);
+
+                &:hover {
+                    color: var(--oranzhevyy);
+                }
+            }
+
+            &:last-child a {
+                border: none;
+                padding: 0;
+            }
+        }
+    }
+}

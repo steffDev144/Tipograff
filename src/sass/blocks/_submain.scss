@@ -1,0 +1,23 @@
+.submain {
+    padding-bottom: 100px;
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        list-style-type: none;
+        gap: 76px;
+
+        &_item {
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 120%;
+            letter-spacing: 0.03em;
+            color: var(--seryy);
+
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+    }
+}

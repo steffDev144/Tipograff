@@ -2,6 +2,15 @@
     padding-bottom: 100px;
     overflow-x: hidden;
 
+    &__line {
+        position: absolute;
+        right: -87px;
+        top: 250px;
+        width: 105%;
+        z-index: -1;
+        pointer-events: none;
+    }
+
     &__wrap {
         display: grid;
         grid-template-columns: 690px 1fr;

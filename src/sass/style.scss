@@ -73,5 +73,7 @@
 
 @include meta.load-css("blocks/header");
 @include meta.load-css("blocks/main");
+@include meta.load-css("blocks/submain");
+@include meta.load-css("blocks/tab");
 
 // @include meta.load-css("blocks/файл");

@@ -71,9 +71,46 @@
     }
 }
 
+body {
+	overflow-x: hidden
+}
+
+h3 {
+	font-family: var(--font-family);
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 120%;
+	letter-spacing: 0.03em;
+	color: var(--seryy);
+	border-radius: 0 20px 20px 0;
+	padding: 15px 45px 15px 55px;
+	background: var(--persikovyy);
+	width: max-content;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		border-radius: 50px;
+		width: 3px;
+		height: calc(100% + 16px);
+		background: var(--oranzhevyy);
+	}
+}
+
 @include meta.load-css("blocks/header");
 @include meta.load-css("blocks/main");
 @include meta.load-css("blocks/submain");
 @include meta.load-css("blocks/tab");
+@include meta.load-css("blocks/reviews");
+@include meta.load-css("blocks/why");
+@include meta.load-css("blocks/delivery");
+@include meta.load-css("blocks/hits");
+@include meta.load-css("blocks/answer");
+
+@include meta.load-css("blocks/appel");
 
 // @include meta.load-css("blocks/файл");

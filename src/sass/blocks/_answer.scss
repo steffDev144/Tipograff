@@ -1,0 +1,77 @@
+.answer {
+    padding: 100px 0;
+    &__wrap {
+        padding: 34px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: var(--oranzhevyy);
+    }
+    h4 {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 120%;
+        letter-spacing: 0.03em;
+        color: var(--belyy);
+    }
+    p {
+        margin-top: 10px;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 120%;
+        letter-spacing: 0.03em;
+        color: var(--belyy);
+    }
+    form {
+        margin-top: 35px;
+        width: 100%;
+    }
+    &__form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 266px);
+        justify-content: center;
+        gap: 20px;
+
+        input {
+            border-radius: 50px;
+            padding: 10px 25px;
+            width: 100%;
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 120%;
+            letter-spacing: 0.03em;
+            color: var(--seryy);
+            border: none;
+        }
+    }
+    button {
+        margin: 0 auto;
+        border: 3px solid var(--belyy);
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 120%;
+        cursor: pointer;
+        margin-top: 35px;
+        letter-spacing: 0.03em;
+        color: var(--belyy);
+        height: 59px;
+        width: 217px;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            background-color: var(--belyy);
+            color: var(--oranzhevyy);
+
+        }
+    }
+}

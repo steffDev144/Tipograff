@@ -37,7 +37,6 @@
 
     &__list {
         margin-top: 50px;
-        display: grid;
         grid-template-columns: repeat(4, 330px);
         gap: 30px;
         grid-template-rows: repeat(2, 220px);
@@ -98,21 +97,38 @@
                 grid-row: 2 / 3;
             }
         }
+        display: none;
+
+        &.active {
+            display: grid;
+        }
     }
 
     &__list2 {
-        display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
         margin-top: 30px;
         grid-template-rows: 220px;
         list-style-type: none;
 
+        display: none;
+
+        &.active {
+            display: grid;
+        }
+
         li {
             &:nth-child(1),
             &:nth-child(2) {
                 grid-row: 1 / 2;
             }
+        }
+    }
+
+    &__list3 {
+        .tab__list_item:nth-child(3),
+        .tab__list_item:nth-child(4) {
+            grid-column: 3 / 5;
         }
     }
 }

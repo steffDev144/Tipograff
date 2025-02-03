@@ -1,0 +1,105 @@
+.work {
+    padding-top: 100px;
+    &__wrap {
+        margin-top: 50px;
+    }
+
+    &__items {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(2, 305px) 1fr;
+        gap: 75px;
+        padding-left: 104px;
+        &_item {
+            padding-bottom: 60px;
+            position: relative;
+            &:last-child {
+                max-width: 362px;
+            }
+            h4 {
+                font-family: var(--font-family);
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 120%;
+                letter-spacing: 0.03em;
+                color: var(--oranzhevyy);
+            }
+            h5 {
+                margin-top: 9px;
+                font-family: var(--font-family);
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 120%;
+                letter-spacing: 0.03em;
+                color: var(--seryy);
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                left: -8px;
+                top: 0;
+                width: 1px;
+                z-index: -1;
+                height: 100%;
+                background: var(--defolt);
+            }
+        }
+
+        &:last-child {
+            padding-left: 294px;
+
+            .work__items_item {
+                padding: 73px 0 0;
+
+                &:last-child {
+                    max-width: 238px;
+                }
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        position: relative;
+        align-items: center;
+        position: relative;
+        list-style-type: none;
+        gap: 59px;
+        padding: 30px 0 30px 30px;
+
+        &>svg {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 100%;
+            max-width: 1142px;
+            height: auto;
+            z-index: -1;
+            object-fit: contain;
+        }
+
+        &_item {
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                background-color: #f5ba9f;
+                width: 18px;
+                height: 18px;
+                border-radius: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -36px;
+            }
+
+            &:nth-child(2n)::before {
+                bottom: unset;
+                top: -36px;
+            }
+        }
+    }
+}

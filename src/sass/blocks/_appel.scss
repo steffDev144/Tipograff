@@ -1,6 +1,17 @@
 .appel {
-    padding: 100px 0;
+    padding-top: 100px;
+	position: relative;
 
+	&>svg {
+		position: absolute;
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+		z-index: -1;
+		left: 0;
+		bottom: -43%;
+	}
+	
     &__wrap {
         margin-top: 50px;
 		display: grid;

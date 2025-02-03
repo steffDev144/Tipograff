@@ -1,0 +1,101 @@
+.footer {
+    margin-top: 100px;
+    background: var(--oranzhevyy);
+    padding: 40px 0;
+    &__wrap {
+        display: flex;
+        gap: 10px;
+    }
+    &__info {
+        width: 100%;
+        max-width: 271px;
+        &_img {
+            width: 181px;
+            height: auto;
+            img {
+                width: inherit;
+                height: inherit;
+                object-fit: contain;
+            }
+        }
+        &_list {
+            list-style-type: none;
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            &-item {
+                display: flex;
+                align-items: center;
+                font-family: var(--font-family);
+                font-weight: 500;
+                gap: 15px;
+                font-size: 16px;
+                line-height: 120%;
+                letter-spacing: 0.03em;
+                color: var(--belyy);
+                a {
+                    color: var(--belyy);
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                span {
+                    display: flex;
+                    justify-content: center;
+                    width: 21px;
+                }
+            }
+        }
+    }
+    &__list {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        row-gap: 20px;
+        column-gap: 39px;
+
+        &_item {
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 120%;
+            letter-spacing: 0.03em;
+            color: var(--belyy);
+            a {
+                text-decoration: none;
+                color: var(--belyy);
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            ul {
+                margin-top: 16px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                list-style-type: none;
+                font-weight: 500;
+                font-size: 16px;
+            }
+
+            .wrap {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                a {
+                    height: auto;
+                    width: 31px;
+                    svg {
+                        width: inherit;
+                        height: inherit;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+}

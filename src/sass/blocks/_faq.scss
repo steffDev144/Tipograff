@@ -1,0 +1,107 @@
+.faq {
+    padding-top: 100px;
+    &__list {
+        list-style-type: none;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        &_item {
+            cursor: pointer;
+            border-radius: 30px;
+            padding: 0 30px;
+            overflow-y: hidden;
+            width: 100%;
+            transition: all .3s ease-in-out;
+            height: 130px;
+            box-shadow: 4px 4px 20px 0 rgba(168, 164, 164, 0.15);
+            background: var(--belyy);
+
+            &-top {
+                font-family: var(--font-family);
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 120%;
+                letter-spacing: 0.03em;
+                color: var(--seryy);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 35px 0;
+                transition: all .3s ease-in-out;
+
+            }
+
+            &-round {
+                width: 60px;
+                height: 60px;
+                border-radius: 100%;
+                border: 2px solid var(--oranzhevyy);
+                background-color: var(--oranzhevyy);
+                position: relative;
+                transition: all .3s ease-in-out;
+
+                div {
+                    
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    
+                    span {
+                        height: 3px;
+                        width: 24px;
+                        display: block;
+                        background-color: var(--belyy);
+                        border-radius: 3px;
+                        transition: all .3s ease-in-out;
+                        
+                    }
+                    &:last-of-type span {
+                        rotate: 90deg;
+                    }
+
+                    
+                }
+            }
+            &:hover &-round {
+                background: transparent;
+                span {
+                    background: var(--oranzhevyy);
+                }
+            }
+
+            &-descr {
+                font-family: var(--font-family);
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 120%;
+                letter-spacing: 0.03em;
+                color: var(--seryy);
+                padding: 20px 0;
+                transition: all .3s ease-in-out;
+            }
+
+            &.active {
+                background: var(--oranzhevyy);
+                .faq__list_item-top, .faq__list_item-descr {
+                    color: var(--belyy);
+                }
+                .faq__list_item-round {
+                    border-color: var(--belyy);
+                    span {
+                        background: var(--belyy)!important;
+                    }
+                    div:first-of-type span {
+                        opacity: 0;
+                    }
+                    div:last-of-type span {
+                        rotate: 0deg;
+                    }
+                }
+            }
+        }
+    }
+}

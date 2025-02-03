@@ -1,0 +1,113 @@
+.catalog {
+    padding-top: 100px;
+    position: relative;
+    &>svg {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        left: 0;
+        z-index: -1;
+        top: 179px;
+    }
+    p {
+        margin-top: 50px;
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        letter-spacing: 0.03em;
+        color: var(--seryy);
+    }
+
+    &__list {
+        margin-top: 30px;
+        display: grid;
+        list-style-type: none;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        grid-auto-rows: 300px;
+
+        &_item {
+            position: relative;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                left: 0;
+                top: 0;
+                z-index: -1;
+                border-radius: 30px;
+            }
+
+            &-top {
+                font-family: var(--font-family);
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 120%;
+                letter-spacing: 0.03em;
+                color: var(--belyy);
+
+                border-radius: 100px;
+                background: var(--oranzhevyy);
+                padding: 10px 35px;
+                width: max-content;
+            }
+
+            &-bottom {
+                display: flex;
+                align-items: end;
+                gap: 15px;
+            }
+
+            &-span {
+                border-radius: 100px;
+                padding: 10px 35px;
+                width: max-content;
+
+                font-family: var(--font-family);
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 120%;
+                letter-spacing: 0.03em;
+                color: var(--belyy);
+                background: var(--oranzhevyy);
+            }
+
+            &-round {
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                margin-left: 11px;
+                justify-content: center;
+                border-radius: 100%;
+                transition: all .3s ease-in-out;
+                background: var(--oranzhevyy);
+                cursor: pointer;
+                svg {
+                    width: 16px;
+                    height: auto;
+                    object-fit: contain;
+
+                    path {
+                        transition: all .3s ease-in-out;
+                    }
+                }
+
+                &:hover {
+                    background: var(--belyy);
+                    svg path {
+                        fill: var(--oranzhevyy);
+                    }
+                }
+            }
+        }
+    }
+}

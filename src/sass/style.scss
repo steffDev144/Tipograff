@@ -110,7 +110,14 @@ h3 {
 @include meta.load-css("blocks/delivery");
 @include meta.load-css("blocks/hits");
 @include meta.load-css("blocks/answer");
-
+@include meta.load-css("blocks/portfolio");
 @include meta.load-css("blocks/appel");
+@include meta.load-css("blocks/faq");
+@include meta.load-css("blocks/descr");
+@include meta.load-css("blocks/contacts");
+@include meta.load-css("blocks/breadcrumbs");
+@include meta.load-css("blocks/catalog");
+@include meta.load-css("blocks/work");
+@include meta.load-css("blocks/footer");
 
 // @include meta.load-css("blocks/файл");

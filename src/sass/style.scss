@@ -72,7 +72,7 @@
 }
 
 body {
-	overflow-x: hidden
+	overflow-x: hidden;
 }
 
 h3 {
@@ -118,6 +118,18 @@ h3 {
 @include meta.load-css("blocks/breadcrumbs");
 @include meta.load-css("blocks/catalog");
 @include meta.load-css("blocks/work");
+@include meta.load-css("blocks/item-catalog");
+@include meta.load-css("blocks/item-var");
+@include meta.load-css("blocks/calc");
+@include meta.load-css("blocks/uwu");
+@include meta.load-css("blocks/notebook");
+@include meta.load-css("blocks/services-category");
+@include meta.load-css("blocks/order");
+@include meta.load-css("blocks/order-info");
+@include meta.load-css("blocks/order-form");
+@include meta.load-css("blocks/order-step");
+@include meta.load-css("blocks/action");
+@include meta.load-css("blocks/port");
 @include meta.load-css("blocks/footer");
 
 // @include meta.load-css("blocks/файл");

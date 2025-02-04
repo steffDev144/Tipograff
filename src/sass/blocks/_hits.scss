@@ -1,5 +1,34 @@
 .hits {
     padding-top: 100px;
+
+    &__catalog {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-between;
+
+        a {
+            border-radius: 50px;
+            padding: 15px 45px;
+            width: max-content;
+            text-decoration: none;
+            transition: all .3s ease-in-out;
+            background: var(--oranzhevyy);
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 120%;
+            letter-spacing: 0.03em;
+            border: 2px solid var(--oranzhevyy);
+            color: var(--belyy);
+
+            &:hover {
+                color: var(--oranzhevyy);
+                background: transparent;
+            }
+        }
+    }
+
     .swiper {
         margin-top: 50px;
         padding-bottom: 35px;
@@ -20,6 +49,20 @@
             object-fit: cover;
             border-radius: 30px;
             z-index: -1;
+        }
+
+        &>span {
+            border-radius: 100px;
+            padding: 10px 35px;
+            width: max-content;
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 120%;
+            background: var(--oranzhevyy);
+            letter-spacing: 0.03em;
+            text-align: center;
+            color: var(--belyy);
         }
     }
 

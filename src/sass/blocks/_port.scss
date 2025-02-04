@@ -1,0 +1,100 @@
+.port {
+    position: relative;
+    padding-top: 100px;
+    &>svg {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: auto;
+        z-index: -1;
+        top: 179px;
+        object-fit: contain;
+    }
+    &__list {
+        margin-top: 50px;
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(345px, 1fr);
+        gap: 30px;
+        &_item {
+            a {
+                position: relative;
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                overflow: hidden;
+                width: 100%;
+                text-decoration: none;
+                transition: all .3s ease-in-out;
+                height: 100%;
+                border-radius: 30px;
+                img {
+                    position: absolute;
+                    min-width: 100%;
+                    min-height: 100%;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: -1;
+                }
+                span {
+                    border-radius: 100px;
+                    padding: 10px 35px;
+                    width: max-content;
+                    background: var(--oranzhevyy);
+                    font-family: var(--font-family);
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 120%;
+                    letter-spacing: 0.03em;
+                    color: var(--belyy);
+                    &:last-of-type {
+                        width: 60px;
+                        height: 60px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0;
+                        margin-left: auto;
+                        svg {
+                            width: 16px;
+                            height: auto;
+                            object-fit: contain;
+                        }
+                    }
+                }
+                &:hover {
+                    scale: 1.02;
+                }
+            }
+        }
+    }
+}
+
+.subport {
+    padding-top: 100px;
+    h4 {
+        margin-top: 50px;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 120%;
+        letter-spacing: 0.03em;
+        color: var(--seryy);
+    }
+    p {
+        margin-top: 15px;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 120%;
+        letter-spacing: 0.03em;
+        color: var(--seryy);
+    }
+
+    &+.portfolio {
+        padding-top: 0;
+    }
+}

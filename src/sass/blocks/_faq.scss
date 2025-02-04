@@ -1,5 +1,14 @@
 .faq {
+    position: relative;
     padding-top: 100px;
+    &>svg {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        z-index: -1;
+        top: 196px;
+    }
     &__list {
         list-style-type: none;
         margin-top: 50px;

@@ -9,6 +9,9 @@
         left: 0;
         z-index: -1;
         top: 35%;
+        &+svg {
+            top: 23%;
+        }
     }
 
     &__wrap {

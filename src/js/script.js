@@ -4,7 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
           faqItem = document.querySelectorAll('.faq__list_item'),
           descrImg = document.querySelectorAll('.descr__wrapper img'),
           descrBtn = document.querySelector('.descr__btn'),
-          descrWrap = document.querySelector('.descr__wrap');
+          descrWrap = document.querySelector('.descr__wrap'),
+          notebookTabs = document.querySelectorAll('.notebook__tab'),
+          notebookBtns = document.querySelectorAll('.notebook__tab_btns a'),
+          orderBtn = document.querySelector('.order-btn'),
+          modal = document.querySelector('.modal'),
+          modalBack = document.querySelector('.modal__back'),
+          stepItems = document.querySelectorAll('.order-step__list_item'),
+          stepBefore = document.querySelector('.order-step__list_before');
 
     if (btns) {
         btns.forEach(item => {
@@ -39,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if(descrBtn != null) {
-        console.log(descrBtn)
         descrImg.forEach(item => {
             if(item.style.float) {
                 item.classList.add(item.style.float);
@@ -57,6 +63,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 descrBtn.querySelector('div').textContent = 'Свернуть';
             }
         });
+    }
+
+    if(notebookBtns) {
+        notebookBtns.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                notebookTabs.forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                notebookTabs.forEach(tab => {
+                    if(item.getAttribute('data-number') == tab.getAttribute('data-number')) {
+                        tab.classList.add('active');
+                    }
+                });
+            });
+        });
+    }
+
+    if(orderBtn) {
+        orderBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('active');
+            modalBack.classList.add('active');
+        });
+        modalBack.addEventListener('click', () => {
+            modal.classList.remove('active');
+            modalBack.classList.remove('active');
+        });
+    }
+
+    if(stepBefore != null) {
+        let height = 0;
+        stepItems.forEach((item, i) => {
+            if(i != stepItems.length - 1) {
+                height += item.clientHeight;
+            } else {
+                height += item.querySelector('h4').clientHeight;
+            }
+        });
+        stepBefore.style.height = height + 'px';
     }
 
     const reviewsSlider = new Swiper('.reviewsSlider', {
@@ -92,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             prevEl: '.swiper-button-prev',
         },
         scrollbar: {
-          el: ".swiper-scrollbar",
+          el: ".swiper-scrollbar-port",
           draggable: false,
         },
     });

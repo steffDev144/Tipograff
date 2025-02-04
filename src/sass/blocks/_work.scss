@@ -1,5 +1,14 @@
 .work {
+    position: relative;
     padding-top: 100px;
+    &>svg {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        left: 0;
+        z-index: -1;
+        top: -187px;
+    }
     &__wrap {
         margin-top: 50px;
     }

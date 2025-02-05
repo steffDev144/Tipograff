@@ -433,31 +433,33 @@
                 <h4>Калькулятор цены</h4>
                 <ul class="calc__list">
                     <li class="calc__list_item">
-                        Плотность листов:
+                        Плотность бумаги:
                         <div>
-                            <a href="#">35 г</a>
+                            <a href="#" data-paper="1">21 г/м²</a>
                             <span class="hr"></span>
-                            <a href="#">21 г</a>
-                        </div>
-                    </li>
-                    <li class="calc__list_item">
-                        Размер листов:
-                        <div>
-                            <a href="#">35 г</a>
-                            <span>x</span>
-                            <a href="#">21 г</a>
+                            <a href="#" data-paper="2">35 г/м²</a>
                         </div>
                     </li>
                     <li class="calc__list_item">
                         Количество листов:
                         <div>
-                            <input type="number" name="number" placeholder="от 100" min="100">
+                            <input type="number" name="number" placeholder="от 50" min="50">
+                        </div>
+                    </li>
+                    <li class="calc__list_item">
+                        Цвет:
+                        <div>
+                            <select name="color">
+                              <option value="one-color">1 цвет</option>
+                              <option value="two-color">2 цвета</option>
+                              <option value="color">заливка</option>
+                            </select>
                         </div>
                     </li>
                     <li class="calc__list_item">
                         Стоимость
                         <div class="price">
-                            195 000 ₽
+                            0 ₽
                         </div>
                     </li>
                 </ul>

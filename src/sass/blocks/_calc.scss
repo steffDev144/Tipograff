@@ -52,7 +52,7 @@
                     color: var(--belyy);
                     transition: all .3s ease-in-out;
 
-                    &:hover {
+                    &:hover, &.active {
                         background: var(--belyy);
                         color: var(--oranzhevyy);
                     }
@@ -90,6 +90,28 @@
                         height: 49px;
                         bottom: 0px;
                         left: -11px;
+                    }
+                }
+
+                select {
+                    border: 3px solid var(--belyy);
+                    border-radius: 100px;
+                    cursor: pointer;
+                    -webkit-appearance: none;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    width: max-content;
+                    font-family: var(--font-family);
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 120%;
+                    background: transparent;
+                    letter-spacing: .03em;
+                    text-align: center;
+                    color: var(--belyy);
+                    transition: all .3s ease-in-out;
+                    option {
+                        color: var(--seryy);
                     }
                 }
             }

@@ -11,7 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
           modal = document.querySelector('.modal'),
           modalBack = document.querySelector('.modal__back'),
           stepItems = document.querySelectorAll('.order-step__list_item'),
-          stepBefore = document.querySelector('.order-step__list_before');
+          stepBefore = document.querySelector('.order-step__list_before'),
+          calcBtns = document.querySelectorAll('.calc__list_item div a'),
+          calcInput = document.querySelector('.calc__list_item div input'),
+          calcSelect = document.querySelector('.calc__list_item div select');
 
     if (btns) {
         btns.forEach(item => {
@@ -103,6 +106,143 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         stepBefore.style.height = height + 'px';
+    }
+
+    if(calcInput != null) {
+        calcBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                CalcBtn(btn);
+            });
+        });
+        calcInput.addEventListener('blur', (e) => {
+            if(e.target.value < 50) {
+                e.target.value = 50;
+            }
+            Calc();
+        });
+        calcSelect.addEventListener('change', () => {
+            Calc();
+        });
+    }
+
+    function CalcBtn(btn) {
+        calcBtns.forEach(btn => {
+            btn.classList.remove('active');    
+        });
+        btn.classList.add('active');
+        if(btn.getAttribute('data-paper') == 1) {
+            calcSelect.querySelectorAll('option').forEach(option => {
+                if(option.value != 'one-color') {
+                    option.setAttribute('hidden', 'hidden');
+                } else {
+                    option.setAttribute('selected', 'selected');
+                }
+            });
+        } else {
+            calcSelect.querySelectorAll('option').forEach(option => {
+                option.removeAttribute('hidden');
+                option.removeAttribute('selected');
+            });
+        }
+        Calc();
+    }
+
+    function Calc() {
+        let price = 0,
+            active = 0,
+            x = 0,
+            count = calcInput.value,
+            option = calcSelect.value;
+
+        calcBtns.forEach(btn => {
+            if(btn.classList.contains('active')) {
+                active = btn.getAttribute('data-paper');
+            }
+        });
+
+        if(active != 0) {
+            if(active == 1) {
+                if(count <= 75) {
+                    x = 150;
+                } else if (count <= 175) {
+                    x = 99.5;
+                } else if (count <= 375) {
+                    x = 63.2;
+                } else if (count <= 750) {
+                    x = 47.1;
+                } else if (count <= 1500) {
+                    x = 38.92;
+                } else if (count <= 3500) {
+                    x = 34.25;
+                } else if (count <= 7500) {
+                    x = 21.84;
+                } else {
+                    x = 19.98;
+                }
+
+            } else {
+                if(option == 'one-color') {
+                    if(count <= 75) {
+                        x = 110;
+                    } else if (count <= 175) {
+                        x = 79.7;
+                    } else if (count <= 375) {
+                        x = 45.04;
+                    } else if (count <= 750) {
+                        x = 30.74;
+                    } else if (count <= 1500) {
+                        x = 21.16;
+                    } else if (count <= 3500) {
+                        x = 15.96;
+                    } else if (count <= 7500) {
+                        x = 12.51;
+                    } else {
+                        x = 11.51;
+                    }
+                } else if(option == 'two-color') {
+                    if(count <= 75) {
+                        x = 229;
+                    } else if (count <= 175) {
+                        x = 138;
+                    } else if (count <= 375) {
+                        x = 74.12;
+                    } else if (count <= 750) {
+                        x = 44.72;
+                    } else if (count <= 1500) {
+                        x = 28.77;
+                    } else if (count <= 3500) {
+                        x = 21.545;
+                    } else if (count <= 7500) {
+                        x = 16.38;
+                    } else {
+                        x = 14,694;
+                    }
+                } else {
+                    if(count <= 75) {
+                        x = 238;
+                    } else if (count <= 175) {
+                        x = 131.6;
+                    } else if (count <= 375) {
+                        x = 66.2;
+                    } else if (count <= 750) {
+                        x = 42.2;
+                    } else if (count <= 1500) {
+                        x = 27.03;
+                    } else if (count <= 3500) {
+                        x = 18.955;
+                    } else if (count <= 7500) {
+                        x = 15.444;
+                    } else {
+                        x = 14.3;
+                    }
+                }
+            }
+        }
+
+        price = x * count;
+
+        document.querySelector('.calc__list_item .price').textContent = Math.round(price) + ' ₽';
     }
 
     const reviewsSlider = new Swiper('.reviewsSlider', {

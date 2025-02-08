@@ -1,5 +1,33 @@
 .portfolio {
+    position: relative;
     padding-top: 100px;
+    &>svg {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        z-index: -1;
+        left: 0;
+        top: 179px;
+    }
+    h4 {
+        margin-top: 50px;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 120%;
+        letter-spacing: 0.03em;
+        color: var(--seryy);
+    }
+    h4 + p {
+        margin-top: 15px;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 120%;
+        letter-spacing: 0.03em;
+        color: var(--seryy);
+    }
     &__wrap {
         display: flex;
         align-items: center;

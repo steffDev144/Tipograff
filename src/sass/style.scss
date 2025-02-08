@@ -130,6 +130,7 @@ h3 {
 @include meta.load-css("blocks/order-step");
 @include meta.load-css("blocks/action");
 @include meta.load-css("blocks/port");
+@include meta.load-css("blocks/news-item");
 @include meta.load-css("blocks/footer");
 
 // @include meta.load-css("blocks/файл");

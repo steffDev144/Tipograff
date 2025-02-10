@@ -1,0 +1,163 @@
+.cart {
+    position: relative;
+    padding-top: 100px;
+    &>svg {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        z-index: -1;
+        left: 0;
+        top: 179px;
+    }
+    &__wrap {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr 330px;
+        gap: 30px;
+
+    }
+    &__list {
+        list-style-type: none;
+        &_item {
+            gap: 20px;
+            padding: 20px 0;
+            align-items: center;
+            display: grid;
+            grid-template-columns: 330px 1fr max-content;
+            border-bottom: 3px solid var(--oranzhevyy);
+            &:last-child {
+                border: 0;
+            }
+            img {
+                width: 100%;
+                border-radius: 30px;
+                height: 150px;
+                object-fit: cover;
+            }
+            &-wrap {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                h4 {
+                    font-family: var(--font-family);
+                    font-weight: 600;
+                    font-size: 32px;
+                    line-height: 120%;
+                    letter-spacing: 0.03em;
+                    color: #010107;
+                    
+                }
+                h5 {
+                    font-family: var(--font-family);
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 120%;
+                    letter-spacing: 0.03em;
+                    color: #010107;
+                }
+            }
+            &-price {
+                border-radius: 50px;
+                width: max-content;
+                font-family: var(--font-family);
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 120%;
+                letter-spacing: 0.03em;
+                padding: 10px 35px;
+                background-color: var(--oranzhevyy);
+                color: var(--belyy);
+            }
+        }   
+    }
+    &__order {
+        border-radius: 20px;
+        padding: 30px;
+        height: max-content;
+        background: var(--oranzhevyy);
+        display: flex;
+        flex-direction: column;
+
+        h4 {
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 120%;
+            letter-spacing: 0.03em;
+            text-align: center;
+            margin-bottom: 10px;
+            color: var(--belyy);
+        }
+        div {
+            font-family: var(--font-family);
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 20px;
+            line-height: 120%;
+            letter-spacing: 0.03em;
+            color: var(--belyy);
+            width: max-content;
+            display: flex;
+            position: relative;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 8px;
+            &::before {
+                content: '';
+                transition: all .3s ease-in-out;
+                display: block;
+                border: 2.50px solid var(--belyy);
+                border-radius: 50px;
+                width: 10px;
+                height: 10px;
+            }
+            &::after {
+                width: 0px;
+                content: '';
+                border-radius: 50px;
+                height: 3px;
+                position: absolute;
+                background: var(--belyy);
+                left: 0;
+                bottom: 0;
+                transition: all .3s ease-in-out;
+            }
+            &.active {
+                &::before {
+                    background-color: var(--belyy);
+                }
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+        a {
+            padding: 0;
+            display: block;
+            border: 3px solid var(--belyy);
+            border-radius: 50px;
+            padding: 15px 45px;
+            width: max-content;
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 120%;
+            letter-spacing: 0.03em;
+            color: var(--belyy);
+            text-decoration: none;
+            margin: 30px auto 0;
+            transition: all .3s ease-in-out;
+            &:hover {
+                background-color: var(--belyy);
+                color: var(--seryy);
+            }
+            &.no-click {
+                pointer-events: none;
+                cursor: default;
+                opacity: .7;
+            }
+        }
+    }
+}

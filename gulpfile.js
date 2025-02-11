@@ -10,7 +10,6 @@ const rename = require("gulp-rename");
 
 const dist = "./dist/";
 
-
 gulp.task("build-js", () => {
   return gulp.src("./src/js/script.js")
     .pipe(webpack({

@@ -1,7 +1,8 @@
 .header {
     width: 100%;
-    position: absolute;
-    top: 30px;
+    position: fixed;
+    padding: 15px 0;
+    background: var(--belyy);
     left: 0;
     z-index: 10;
 

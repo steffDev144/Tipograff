@@ -16,7 +16,29 @@ document.addEventListener('DOMContentLoaded', () => {
           calcInput = document.querySelector('.calc__list_item div input'),
           calcSelect = document.querySelector('.calc__list_item div select'),
           cartOrderRadio = document.querySelectorAll('.cart__order div'),
-          brandListItems = document.querySelectorAll('.brand__list_item');
+          brandListItems = document.querySelectorAll('.brand__list_item'),
+          mainBg = document.querySelector('.main__right_bg img.active');
+
+
+    if(mainBg != null && mainBg) {
+        let prev = mainBg.previousElementSibling,
+            next = mainBg.nextElementSibling;
+        console.log(prev);
+        console.log(mainBg);
+        console.log(next);
+        setInterval(() => {
+            changeBg();
+        }, 1000);
+
+        function changeBg() {
+            mainBg.classList.remove('active');
+            if(mainBg.nextElementSibling) {
+                mainBg.nextElementSibling.classList.add('active');
+            } else {
+                mainBg.parentElement.firstElementChild.classList.add('active');
+            }
+        }
+    }
 
     if(brandListItems) {
         let time = 0,

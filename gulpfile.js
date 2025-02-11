@@ -10,6 +10,7 @@ const rename = require("gulp-rename");
 
 const dist = "./dist/";
 
+
 gulp.task("build-js", () => {
   return gulp.src("./src/js/script.js")
     .pipe(webpack({
@@ -119,7 +120,7 @@ gulp.task('icons', function () {
 });
 
 gulp.task('images', function () {
-  return gulp.src("src/img/**/*")
+  return gulp.src("src/img/**/*", { encoding: false })
     .pipe(gulp.dest("dist/img"))
     .pipe(browsersync.stream());
 });

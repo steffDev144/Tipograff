@@ -16,26 +16,53 @@ document.addEventListener('DOMContentLoaded', () => {
           calcInput = document.querySelector('.calc__list_item div input'),
           calcSelect = document.querySelector('.calc__list_item div select'),
           cartOrderRadio = document.querySelectorAll('.cart__order div'),
-          brandListItems = document.querySelectorAll('.brand__list_item'),
-          mainBg = document.querySelector('.main__right_bg img.active');
+          brandListItems = document.querySelectorAll('.brand__list_item');
+    let mainBg = document.querySelector('.main__right_bg img.active');
 
 
     if(mainBg != null && mainBg) {
-        let prev = mainBg.previousElementSibling,
-            next = mainBg.nextElementSibling;
-        console.log(prev);
-        console.log(mainBg);
-        console.log(next);
         setInterval(() => {
             changeBg();
-        }, 1000);
+        }, 10000);
 
         function changeBg() {
             mainBg.classList.remove('active');
             if(mainBg.nextElementSibling) {
                 mainBg.nextElementSibling.classList.add('active');
+                if(mainBg.parentElement.lastElementChild.classList.contains('prev')) {
+                    mainBg.parentElement.lastElementChild.classList.remove('prev');
+                    mainBg.parentElement.lastElementChild.previousElementSibling.classList.remove('start');
+                    mainBg.parentElement.lastElementChild.classList.add('start');
+                }
+                if(mainBg != null) {
+                    mainBg.classList.add('prev');
+                    if(mainBg.previousElementSibling) {
+                        mainBg.previousElementSibling.classList.remove('prev');
+                        if(mainBg.previousElementSibling) {
+                            mainBg.parentElement.lastElementChild.classList.remove('start');
+                        }
+                        if(mainBg.previousElementSibling) {
+                            mainBg.previousElementSibling.classList.add('start');
+                            if(mainBg.previousElementSibling.previousElementSibling) {
+                                mainBg.previousElementSibling.previousElementSibling.classList.remove('start');
+                            }
+                        }
+                    }
+                }
+                mainBg = mainBg.nextElementSibling;
             } else {
                 mainBg.parentElement.firstElementChild.classList.add('active');
+                if(mainBg.previousElementSibling) {
+                    mainBg.previousElementSibling.classList.remove('prev');
+                }
+                mainBg.classList.add('prev');
+                if(mainBg.previousElementSibling) {
+                    mainBg.previousElementSibling.classList.add('start');
+                    if(mainBg.previousElementSibling.previousElementSibling) {
+                        mainBg.previousElementSibling.previousElementSibling.classList.remove('start');
+                    }
+                }
+                mainBg = mainBg.parentElement.firstElementChild;
             }
         }
     }
@@ -44,13 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let time = 0,
             interval = -44;
         brandListItems.forEach(item => {
-            // setTimeout(() => {
-            //     item.style.animation = 'scrollLeft linear 10s -24s infinite';
-            // }, time)
-            // item.style.right = time + 'px'; 
             item.style.animation = 'scrollLeft linear 44s '+ interval +'s infinite';
             interval = interval + 4;
-            // time = time + 100;
         });
     }
 

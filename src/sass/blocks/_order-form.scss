@@ -23,6 +23,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        &>p {
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 120%;
+            letter-spacing: 0.03em;
+            text-align: center;
+            color: var(--belyy);
+            margin-top: 15px;
+            max-width: 962px;
+        }
         h4 {
             font-family: var(--font-family);
             font-weight: 600;

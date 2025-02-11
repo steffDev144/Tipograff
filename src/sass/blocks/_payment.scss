@@ -1,0 +1,71 @@
+.payment {
+    position: relative;
+    padding-top: 100px;
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+        &_list {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            &-item {
+                border-radius: 100%;
+                width: 60px;
+                height: 60px;
+                background: var(--oranzhevyy);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                svg {
+                    max-width: 32px;
+                    height: auto;
+                    object-fit: contain;
+                }
+            }
+        }
+        a {
+            margin: 0!important;
+        }
+    }
+    p {
+        margin-top: 30px;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 120%;
+        letter-spacing: 0.03em;
+        color: var(--seryy);
+        &+p {
+            font-weight: 500;
+            font-size: 20px;
+        }
+    }
+    a {
+        display: block;
+        margin-top: 15px;
+        margin-left: auto;
+        border-radius: 50px;
+        padding: 15px 45px;
+        width: max-content;
+        text-decoration: none;
+        border: 3px solid var(--oranzhevyy);
+        transition: all .3s ease-in-out;
+        background: var(--oranzhevyy);
+
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 120%;
+        letter-spacing: 0.03em;
+        color: var(--belyy);
+        &:hover {
+            background-color: transparent;
+            color: var(--oranzhevyy);
+        }
+    }
+}

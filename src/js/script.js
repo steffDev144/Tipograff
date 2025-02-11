@@ -14,7 +14,57 @@ document.addEventListener('DOMContentLoaded', () => {
           stepBefore = document.querySelector('.order-step__list_before'),
           calcBtns = document.querySelectorAll('.calc__list_item div a'),
           calcInput = document.querySelector('.calc__list_item div input'),
-          calcSelect = document.querySelector('.calc__list_item div select');
+          calcSelect = document.querySelector('.calc__list_item div select'),
+          cartOrderRadio = document.querySelectorAll('.cart__order div'),
+          brandListItems = document.querySelectorAll('.brand__list_item'),
+          mainBg = document.querySelector('.main__right_bg img.active');
+
+
+    if(mainBg != null && mainBg) {
+        let prev = mainBg.previousElementSibling,
+            next = mainBg.nextElementSibling;
+        console.log(prev);
+        console.log(mainBg);
+        console.log(next);
+        setInterval(() => {
+            changeBg();
+        }, 1000);
+
+        function changeBg() {
+            mainBg.classList.remove('active');
+            if(mainBg.nextElementSibling) {
+                mainBg.nextElementSibling.classList.add('active');
+            } else {
+                mainBg.parentElement.firstElementChild.classList.add('active');
+            }
+        }
+    }
+
+    if(brandListItems) {
+        let time = 0,
+            interval = -44;
+        brandListItems.forEach(item => {
+            // setTimeout(() => {
+            //     item.style.animation = 'scrollLeft linear 10s -24s infinite';
+            // }, time)
+            // item.style.right = time + 'px'; 
+            item.style.animation = 'scrollLeft linear 44s '+ interval +'s infinite';
+            interval = interval + 4;
+            // time = time + 100;
+        });
+    }
+
+    if(cartOrderRadio) {
+        cartOrderRadio.forEach(item => {
+            item.addEventListener('click', () => {
+                cartOrderRadio.forEach(item => {
+                    item.classList.remove('active');
+                });
+                item.classList.add('active');
+                document.querySelector('a.cart').classList.remove('no-click');
+            });
+        });
+    }
 
     if (btns) {
         btns.forEach(item => {

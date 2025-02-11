@@ -59,16 +59,29 @@
         display: flex;
         align-items: end;
         padding: 35px;
+        border-radius: 50px 0 0 50px;
 
         &_bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: auto;
-            object-fit: contain;
-            border-radius: 50px 0 0 50px;
-            z-index: -1;
+            // position: relative;
+            // top: 0;
+            // left: 0;
+            // height: 100%;
+            // width: auto;
+            // z-index: -1;
+            img {
+                height: 100%;
+                position: absolute;
+                top: 0; 
+                left: 140%;                
+                width: auto;
+                transition: all .5s ease-in-out;
+                object-fit: cover;
+                min-width: 1000px;
+                border-radius: 50px 0 0 50px;
+                &.active {
+                    left: 0;
+                }
+            }
         }
 
         &_wrap {

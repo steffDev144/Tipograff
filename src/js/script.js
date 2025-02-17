@@ -16,8 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
           calcInput = document.querySelector('.calc__list_item div input'),
           calcSelect = document.querySelector('.calc__list_item div select'),
           cartOrderRadio = document.querySelectorAll('.cart__order div'),
-          brandListItems = document.querySelectorAll('.brand__list_item');
+          brandListItems = document.querySelectorAll('.brand__list_item'),
+          headerBtn = document.querySelector('.header__btn'),
+          headerList = document.querySelector('.header__list'),
+          headerBack = document.querySelector('.header__back');
+
     let mainBg = document.querySelector('.main__right_bg img.active');
+
+    if(headerBtn && headerBtn != null) {
+        headerBtn.addEventListener('click', () => {
+            headerList.classList.toggle('active');
+            headerBack.classList.toggle('active');
+            headerBtn.classList.toggle('active');
+        });
+    }
 
 
     if(mainBg != null && mainBg) {
@@ -108,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (faqItem) {
         faqItem.forEach(item => {
+            item.style.height = item.querySelector('.faq__list_item-top').clientHeight + 'px';
             item.addEventListener('click', () => {
                 if(item.classList.contains('active')) {
                     item.style.height = item.querySelector('.faq__list_item-top').clientHeight + 'px';
@@ -323,6 +336,14 @@ document.addEventListener('DOMContentLoaded', () => {
         slidesPerView: 2,
         centeredSlides: true,
         loop: true,
+        breakpoints: {
+            0: {
+              slidesPerView: 1,
+            },
+            991: {
+                slidesPerView: 2,
+            },
+        },
         navigation: {
             nextEl: '.swiper-button-next',
         },
@@ -334,6 +355,21 @@ document.addEventListener('DOMContentLoaded', () => {
         
         navigation: {
             nextEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 30,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1200: {
+              slidesPerView: 3,
+            },
+            1440: {
+              slidesPerView: 4,
+            },
         },
         scrollbar: {
           el: ".swiper-scrollbar",
@@ -348,6 +384,18 @@ document.addEventListener('DOMContentLoaded', () => {
         
         navigation: {
             prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 30,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1200: {
+                slidesPerView: 'auto',
+            },
         },
         scrollbar: {
           el: ".swiper-scrollbar-port",

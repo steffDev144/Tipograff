@@ -34,9 +34,10 @@
             }
             &-wrap {
                 margin-top: 15px;
-                display: flex;
+                display: grid;
                 align-items: center;
                 gap: 30px;
+                grid-template-columns: 35px 1fr;
             }
             &-count {
                 border-radius: 100%;

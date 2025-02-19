@@ -44,8 +44,8 @@
                 span {
                     border-radius: 100px;
                     padding: 10px 35px;
-                    width: max-content;
-                    max-width: 100%;
+                    width: 100%;
+                    max-width: max-content;
                     font-family: var(--font-family);
                     font-weight: 600;
                     font-size: 24px;
@@ -60,6 +60,7 @@
                         border: none;
                         padding: 0;
                         width: 60px;
+                        max-width: unset;
                         height: 60px;
                         margin-left: auto;
                         margin-top: auto;
@@ -113,7 +114,7 @@
                 width: max-content;
                 font-family: var(--font-family);
                 font-weight: 600;
-                font-size: 24px;
+                font-size: 23px;
                 
                 letter-spacing: 0.03em;
                 color: var(--belyy);

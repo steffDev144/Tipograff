@@ -1,8 +1,9 @@
 .breadcrumbs {
-    margin-top: 110px;
+    padding-top: 129px;
     &__list {
         list-style-type: none;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         column-gap: 55px;
         row-gap: 15px;

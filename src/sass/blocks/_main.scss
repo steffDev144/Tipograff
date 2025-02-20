@@ -12,18 +12,19 @@
 
     &__wrap {
         display: grid;
-        grid-template-columns: 690px 1fr;
+        grid-template-columns: 760px 1fr;
         gap: 31px;
     }
 
     &__left {
         padding-top: 166px;
+        max-width: 660px;
         h1 {
             position: relative;
             font-family: var(--font-family);
             font-weight: 600;
             max-width: 620px;
-            font-size: 96px;
+            font-size: 78px;
             
             padding-left: 23px;
             letter-spacing: 0.03em;

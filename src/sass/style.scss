@@ -1,17 +1,14 @@
 @use 'sass:meta';
 
 @font-face {
-	font-family: "Nexa";
-	src: url("../fonts/Fontfabric\ -\ Nexa-Bold.otf") format("otf");
-	font-weight: 600;
+	font-family: "Butler";
+	src: url("../fonts/Butler_Black.otf") format("otf");
 }
 
 @font-face {
-	font-family: "Nexa";
-	src: url("../fonts/Fontfabric\ -\ Nexa-Light.otf") format("otf");
-	font-weight: 500;
+	font-family: "Montserrat";
+	src: url("../fonts/ofont.ru_Montserrat\ 2.ttf") format("ttf");
 }
-
 
 @font-face {
 	font-family: "Inter";
@@ -38,7 +35,7 @@
 	--seryy: #262626;
 	--persikovyy: #ffd9b9;
 	--defolt: #dcdcdc;
-    --font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+    --font-family: "Butler", sans-serif;
     --second-family: "Inter", sans-serif;
     --third-family: "SF UI Display", sans-serif;
 }

@@ -65,11 +65,9 @@
 
         &_bg {
             position: relative;
-            // top: 0;
-            // left: 0;
             height: 100%;
             width: 39vw;
-            // z-index: -1;
+            min-width: 100%;
             overflow: hidden;
             border-radius: 50px;
             img {
